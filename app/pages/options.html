@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../styles/options.css"></link>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="media">
+          <img class="mr-3 icon" src="/images/icon-128.png" alt="icon">
+          <div class="media-body">
+            <h5 class="mt-0">FAP - FurAffinity Patcher</h5>
+            The FurAffinity Patcher is a Browser Extension with some Content Scripts for <a href="https://www.furaffinity.net/">https://www.furaffinity.net/</a>.  
+            Adding some Client-Side features like Edit-Preview and some smaller tweaks.  
+          </div>
+        </div>
+
+        <h2 class="mt-4">Options</h2>
+
+        <form>
+          <h3 class="mt-2">Enable/Disable Features</h3>
+
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="defaultEditorPreview">
+            <label class="form-check-label" for="defaultEditorPreview">Default Editor with Preview</label>
+          </div>
+
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="profileTweaks">
+            <label class="form-check-label" for="profileTweaks">User-Profile Tweaks</label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="viewTweaks">
+            <label class="form-check-label" for="viewTweaks">Submission View Tweaks</label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="useNewNotesList">
+            <label class="form-check-label" for="useNewNotesList">New Notes List with Sort and Search</label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="watchlistWithPaging">
+            <label class="form-check-label" for="watchlistWithPaging">Watchlist with Paging and new List</label>
+          </div>
+
+          <div class="invisible form-group form-check">
+            <input type="checkbox" class="form-check-input" id="watchlistWithIcons">
+            <label class="form-check-label" for="watchlistWithIcons">Watchlist with Icons</label>
+          </div>
+          <div class="form-group">
+            <small id="featuresHelp" class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <small id="blacklistHelp" class="form-text text-muted">
+              Blacklist currently only supports User, Title or Submission-ID.
+              "Use Blacklist in Submissions-Titles"-Checkbox if you want to use the blacklist in Titles.
+               - use "s-123456" for Submission with ID "123456"
+               - use "u-username" for Submissions with Author "user" ... or just use the User-Blacklist
+            </small>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item active">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="enableBlacklist">
+                <label class="form-check-label" for="enableBlacklist">Blacklists</label>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="row">
+
+                <div class="col">
+                  <div class="card alert-success">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideGeneral">
+                          <label class="form-check-label" for="enableHideGeneral">Hide ALL General Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistGeneral">
+                          <label class="form-check-label" for="enableBlacklistGeneral">General</label>
+                        </div>
+                      </div>
+                      
+                      <textarea id="blacklistGeneral" class="form-control" rows="5" placeholder="Blacklist"></textarea>
+                      <small id="blacklistGeneralHelpBlock" class="form-text text-muted">
+                        Use a new line to separate keywords. 
+                        You can also use <a href="https://regex101.com/">regex</a>.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card alert-warning">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideMature">
+                          <label class="form-check-label" for="enableHideMature">Hide ALL Mature Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistMature">
+                          <label class="form-check-label" for="enableBlacklistMature">Mature</label>
+                        </div>
+                      </div>
+                      
+                      <textarea id="blacklistMature" class="form-control" rows="5" placeholder="Blacklist"></textarea>
+                      <small id="blacklistMatureHelpBlock" class="form-text text-muted">
+                        Use a new line to separate keywords. 
+                        You can also use <a href="https://regex101.com/">regex</a>.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card alert-danger">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideAdult">
+                          <label class="form-check-label" for="enableHideAdult">Hide ALL Adult Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistAdult">
+                          <label class="form-check-label" for="enableBlacklistAdult">Adult</label>
+                        </div>
+                      </div>
+                      
+                      <textarea id="blacklistAdult" class="form-control" rows="5" placeholder="Blacklist"></textarea>
+                      <small id="blacklistAdultHelpBlock" class="form-text text-muted">
+                        Use a new line to separate keywords. 
+                        You can also use <a href="https://regex101.com/">regex</a>.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card alert-dark">
+                    <div class="card-body">
+                      <div class="card-title form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="enableBlacklistFetish">
+                        <label class="form-check-label" for="enableBlacklistFetish">Fetish Blacklist</label>
+                      </div>
+                      
+                      <textarea id="blacklistFetish" class="form-control" rows="5" placeholder="Blacklist"></textarea>
+                      <small id="blacklistFetishHelpBlock" class="form-text text-muted">
+                        Use a new line to separate keywords. 
+                        You can also use <a href="https://regex101.com/">regex</a>.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card alert-info">
+                    <div class="card-body">
+                      <div class="card-title form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="enableBlacklistUser">
+                        <label class="form-check-label" for="enableBlacklistUser">User Blacklist</label>
+                      </div>
+                      
+                      <textarea id="blacklistUser" class="form-control" rows="5" placeholder="Blacklist"></textarea>
+                      <small id="blacklistUserHelpBlock" class="form-text text-muted">
+                        Use a new line to separate keywords. 
+                        You can also use <a href="https://regex101.com/">regex</a>.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInSubmissions">
+                    <label class="form-check-label" for="disableBlacklistInSubmissions">Disable on Submissions-Page</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInBrowse">
+                    <label class="form-check-label" for="disableBlacklistInBrowse">Disable on Browse-Page</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInArtist">
+                    <label class="form-check-label" for="disableBlacklistInArtist">Disable on Artist/Gallery-Page</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="useBlacklistInTitles">
+                    <label class="form-check-label" for="useBlacklistInTitles">Use Blacklist in Submissions-Titles</label>
+                  </div>
+
+              </div>
+            </li>
+          </ul>
+
+          <div class="row mt-2">
+            <div class="col">
+              <button type="button" id="save" class="btn btn-primary">Save Options</button>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col">
+              <small><i></i></small>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <!-- load javascript: unique html page javascript file -->
+      <script type="text/javascript" src="../js/jquery.min.js"></script>
+      <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../options.js"></script>
+    </body>
+</html>

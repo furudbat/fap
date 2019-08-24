@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "fap",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "FurAffinity Patcher",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "Browser Extension for furaffinity.net with some tweaks and fixes.",
+    "description": "The description of the application"
+  }
+}

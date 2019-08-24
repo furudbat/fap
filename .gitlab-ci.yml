@@ -1,0 +1,28 @@
+
+image: node:8.16
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+
+before_script:
+  - npm install
+
+
+build_firefox:
+  stage: build
+  script:
+   - npm run build firefox
+  artifacts:
+    paths:
+    - packages/*.firefox.xpi.zip
+
+  
+build_chrome:
+  stage: build
+  script:
+   - npm run build chrome
+  artifacts:
+    paths:
+    - packages/*.chrome.zip

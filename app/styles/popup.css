@@ -1,0 +1,16 @@
+.icon {
+    width: 64px;
+    height: 64px;
+}
+
+.list-group-item-trans {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+body {
+    width: 480px;
+}

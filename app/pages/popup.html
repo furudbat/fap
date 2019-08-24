@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../styles/popup.css"></link>
+    </head>
+    <body>
+      <div class="container-fluid m-2">
+        <div class="media">
+          <img class="mr-3 icon" src="/images/icon-128.png" alt="icon">
+          <div class="media-body">
+            <h5 class="mt-0">FAP - FurAffinity Patcher</h5>
+          </div>
+        </div>
+
+        <form>
+
+          <ul class="list-group">
+            <li class="list-group-item active">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="enableBlacklist">
+                <label class="form-check-label" for="enableBlacklist">Blacklists</label>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="row">
+
+                <div class="col-md">
+                  <div class="card alert-success">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideGeneral">
+                          <label class="form-check-label" for="enableHideGeneral">Hide ALL General Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistGeneral">
+                          <label class="form-check-label" for="enableBlacklistGeneral">General</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="card alert-warning">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideMature">
+                          <label class="form-check-label" for="enableHideMature">Hide ALL Mature Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistMature">
+                          <label class="form-check-label" for="enableBlacklistMature">Mature</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="card alert-danger">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableHideAdult">
+                          <label class="form-check-label" for="enableHideAdult">Hide ALL Adult Content</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="enableBlacklistAdult">
+                          <label class="form-check-label" for="enableBlacklistAdult">Adult</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="card alert-dark">
+                    <div class="card-body">
+                      <div class="card-title form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="enableBlacklistFetish">
+                        <label class="form-check-label" for="enableBlacklistFetish">Fetish Blacklist</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="card alert-info">
+                    <div class="card-body">
+                      <div class="card-title form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="enableBlacklistUser">
+                        <label class="form-check-label" for="enableBlacklistUser">User Blacklist</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInSubmissions">
+                    <label class="form-check-label" for="disableBlacklistInSubmissions">Disable on Submissions-Page</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInBrowse">
+                    <label class="form-check-label" for="disableBlacklistInBrowse">Disable on Browse-Page</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="disableBlacklistInArtist">
+                    <label class="form-check-label" for="disableBlacklistInArtist">Disable on Artist/Gallery-Page</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="useBlacklistInTitles">
+                    <label class="form-check-label" for="useBlacklistInTitles">Use Blacklist in Submissions-Titles</label>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+      
+      <!-- load javascript: unique html page javascript file -->
+      <script type="text/javascript" src="../js/jquery.min.js"></script>
+      <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDescription__",
+  "version": "0.5.0",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "__firefox__browser_specific_settings": {
+    "gecko": {
+      "id": "hircreacc@gmail.com"
+    }
+  },  
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png",
+    "256": "images/icon-256.png",
+    "512": "images/icon-512.png"
+  },
+  "web_accessible_resources": [
+    "images/*.png",
+    "styles/bootstrap.min.css",
+    "js/*.js"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "__chrome__options_page": "pages/options.html",
+  "options_ui": {
+    "page": "pages/options.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_icon": "images/icon-128.png",
+    "default_popup": "pages/popup.html",
+    "default_title": "fap"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "styles/popper.css",
+        "styles/style.css"
+      ],
+      "matches": ["*://*.furaffinity.net/*"]
+    },
+    {
+      "js": [
+        "scripts/submission.js"
+      ],
+      "matches": ["*://*.furaffinity.net/submit/submission/4/"]
+    },
+    {
+      "css": [
+        "styles/notes.css"
+      ],
+      "js": [
+        "scripts/notes.js"
+      ],
+      "matches": ["*://*.furaffinity.net/msg/pms/", "*://*.furaffinity.net/msg/pms/*", "*://*.furaffinity.net/msg/pms/1/*/"]
+    },
+    {
+      "js": [
+        "scripts/journal.js"
+      ],
+      "matches": ["*://*.furaffinity.net/controls/journal/", "*://*.furaffinity.net/controls/journal/1/*"]
+    },
+    {
+      "css": [
+        "styles/watchlist.css"
+      ],
+      "js": [
+        "scripts/watchlist.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/watchlist/by/*/", "*://*.furaffinity.net/watchlist/to/*/",
+        "*://*.furaffinity.net/watchlist/by/*/*", "*://*.furaffinity.net/watchlist/to/*/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/profile.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/user/*/", "*://*.furaffinity.net/user/*",
+        "*://*.furaffinity.net/gallery/*/", "*://*.furaffinity.net/gallery/*",
+        "*://*.furaffinity.net/scraps/*/", "*://*.furaffinity.net/scraps/*",
+        "*://*.furaffinity.net/favorites/*/", "*://*.furaffinity.net/favorites/*",
+        "*://*.furaffinity.net/journals/*/", "*://*.furaffinity.net/journals/*",
+        "*://*.furaffinity.net/commissions/*/", "*://*.furaffinity.net/commissions/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/journals.js"
+      ],
+      "matches": ["*://*.furaffinity.net/journals/*"]
+    },
+    {
+      "js": [
+        "scripts/controlsprofile.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/controls/profile/", "*://*.furaffinity.net/controls/profile"
+      ]
+    },
+    {
+      "js": [
+        "scripts/controlssubmissions.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/controls/submissions/changeinfo/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/browse.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/",
+        "*://*.furaffinity.net/browse", "*://*.furaffinity.net/browse/*",
+        "*://*.furaffinity.net/msg/submissions", "*://*.furaffinity.net/msg/submissions/",
+        "*://*.furaffinity.net/gallery/*", "*://*.furaffinity.net/scraps/*",
+        "*://*.furaffinity.net/favorites/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/view.js"
+      ],
+      "matches": [
+        "*://*.furaffinity.net/view/*/", "*://*.furaffinity.net/view/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "*://*.furaffinity.net/",
+    "storage"
+  ]
+}
